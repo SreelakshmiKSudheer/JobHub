@@ -2,8 +2,8 @@ import React from 'react'
 
 const LandingPage = () => {
   return (
-    <div>
-      
+    <div className="w-full flex flex-col">
+
     </div>
   )
 }
