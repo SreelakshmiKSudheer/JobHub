@@ -1,0 +1,45 @@
+import React from 'react'
+import { Route, Routes } from 'react-router'
+import PublicLayout from '../layouts/PublicLayout/PublicLayout'
+import AuthLayout from '../layouts/AuthLayout/AuthLayout'
+import AdminLayout from '../layouts/AdminLayout/AdminLayout'
+import EmployeeLayout from '../layouts/EmployeeLayout/EmployeeLayout'
+import LandingPage from '../pages/public/LandingPage'
+import Login from '../pages/auth/Login'
+import AdminDashboard from '../pages/admin/AdminDashboard'
+import AdminJobRoles from '../pages/admin/AdminJobRoles'
+import AdminJobPostings from '../pages/admin/AdminJobPostings'
+import EmployeeDashboard from '../pages/employee/EmployeeDashboard'
+import AdminJobApplications from '../pages/admin/AdminApplications'
+import AdminJobApplication from '../pages/admin/AdminApplication'
+import EmployeeProfile from '../pages/employee/EmployeeProfile'
+import EmployeeJobDetails from '../pages/employee/EmployeeJobDetails'
+import EmployeeApplicationTracking from '../pages/employee/EmployeeApplicationTracking'
+
+const AppRoutes = () => {
+  return (
+    <Routes>
+        <Route element={<PublicLayout />}>
+            <Route path="/" element={<LandingPage />} />
+        </Route>
+        <Route element={<AuthLayout />}>
+            <Route path="/login" element={<Login />} />
+        </Route>
+        <Route element={<AdminLayout />}>
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin/job-roles" element={<AdminJobRoles/>} />
+            <Route path="/admin/job-postings" element={<AdminJobPostings/>} />
+            <Route path="/admin/job-applications" element={<AdminJobApplications/>} />
+            <Route path="/admin/job-applications/:id" element={<AdminJobApplication/>} />
+        </Route>
+        <Route element={<EmployeeLayout />}>
+            <Route path="/employee" element={<EmployeeDashboard />} />
+            <Route path="/employee/profile" element={<EmployeeProfile/>} />
+            <Route path="/employee/job-details/:id" element={<EmployeeJobDetails />} />
+            <Route path="/employee/applications/:id" element={<EmployeeApplicationTracking />} />
+        </Route>
+    </Routes>
+  )
+}
+
+export default AppRoutes
