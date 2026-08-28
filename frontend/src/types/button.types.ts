@@ -39,7 +39,5 @@ export interface ButtonProps
 
   loading?: boolean;
 
-  rounded?: string;
-
   onClick?: () => void;
 }

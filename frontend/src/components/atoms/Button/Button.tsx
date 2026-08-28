@@ -19,7 +19,6 @@ const Button = ({
   className = "",
   disabled,
   type = "button",
-  rounded = "lg",
   onClick,
   ...props
 }: ButtonProps) => {
@@ -32,7 +31,6 @@ const Button = ({
         items-center
         justify-center
         gap-2
-        rounded-${rounded}
         transition-all
         duration-200
         font-medium
