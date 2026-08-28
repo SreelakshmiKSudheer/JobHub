@@ -1,45 +1,32 @@
 import React from 'react'
 import type { HeaderProps } from '../../../types/header.types'
 
-const Header = ({ left, center, right }: HeaderProps) => {
+const Header = ({ left, center, right, bottom }: HeaderProps) => {
   return (
-    <header className="w-full py-2 px-10 h-15 bg-bg border border-b border-primary/50">
-      {
-      left && !center && !right && 
-        <div className="flex items-center justify-start h-full">
-          <div className="flex-shrink-0 gap-5">
+    <header className="sticky inset-x-0 top-0 z-header w-full bg-bg border-b border-primary/50 backdrop-blur-md">
+      {/* Main Header Bar */}
+      <div className="mx-auto flex h-16 w-full items-center justify-between px-4 md:px-10">
+        {left && (
+          <div className="flex shrink-0 items-center justify-start h-full">
             {left}
           </div>
-        </div>
-      }
-      {
-      !left && center && !right && 
-        <div className="flex items-center justify-center h-full">
-          <div className="flex-shrink-0">
+        )}
+        
+        {center && (
+          <div className="flex flex-1 items-center justify-center h-full">
             {center}
           </div>
-        </div>
-      }
-      {
-      !left && !center && right && 
-        <div className="flex items-center justify-center h-full">
-          <div className="flex-shrink-0">
+        )}
+        
+        {right && (
+          <div className="flex shrink-0 items-center justify-end h-full">
             {right}
           </div>
-        </div>
-      }
-      {left && right && 
-       <div className="flex items-center justify-between h-full">
-        <div className="flex-shrink-0">
-          {left}
-        </div>
-        <div className="flex-shrink-0">
-          {center}
-        </div>
-        <div className="flex-shrink-0">
-          {right}
-        </div>
-      </div>}
+        )}
+      </div>
+
+      {/* Dropdown / Mobile Menu Slot */}
+      {bottom && bottom}
     </header>
   )
 }
