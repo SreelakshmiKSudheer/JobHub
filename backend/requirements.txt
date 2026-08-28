@@ -1,0 +1,10 @@
+fastapi                 # backend framework
+uvicorn[standard]       # run FastAPI server
+
+sqlalchemy              # orm
+psycopg2-binary         # PostgreSQL driver
+
+alembic                 
+
+pydantic-settings
+python-dotenv
