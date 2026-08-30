@@ -16,6 +16,7 @@ const Button = ({
   iconPosition = "left",
   iconDirection = "row",
   loading = false,
+  fullWidth = false, // 1. Extract fullWidth from props
   className = "",
   disabled,
   type = "button",
@@ -27,7 +28,9 @@ const Button = ({
       type={type}
       disabled={disabled || loading}
       className={`
-        inline-flex
+        /* 2. Dynamically apply width and flex classes */
+        ${fullWidth ? "w-full flex" : "w-fit inline-flex"} 
+        
         items-center
         justify-center
         gap-2
