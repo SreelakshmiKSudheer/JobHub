@@ -9,9 +9,9 @@ import { Menu, X } from "lucide-react";
 
 const PublicLayout = () => {
   const navItems = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
+    { label: "Home", href: "#home" },
+    { label: "Features", href: "#features" },
+    { label: "About", href: "#about" },
   ];
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,7 +25,7 @@ const PublicLayout = () => {
         left={<Logo />}
         center={
           <div className="hidden md:block">
-            <Navbar items={navItems} activePath="/" />
+            <Navbar items={navItems} activePath="#home" />
           </div>
         }
         right={
@@ -35,7 +35,7 @@ const PublicLayout = () => {
                 text="Get Started"
                 variant="filled"
                 className="rounded-3xl"
-                textClassName="text-white font-bold"
+                textClassName="text-white"
               />
             </div>
             {/* Mobile Menu Toggle */}
@@ -63,14 +63,14 @@ const PublicLayout = () => {
                   text="Get Started"
                   variant="filled"
                   className="w-full rounded-3xl"
-                  textClassName="text-white font-bold"
+                  textClassName="text-white"
                 />
               </div>
             </div>
           </div>
         }
       />
-      <main className="flex flex-1 w-full flex-col">
+      <main className="flex flex-1 w-full flex-col px-5 md:px-20 py-5 md:py-10">
         <Outlet />
       </main>
       <Footer />
