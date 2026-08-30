@@ -1,10 +1,17 @@
-fastapi                 # backend framework
-uvicorn[standard]       # run FastAPI server
+fastapi==0.115.0                    # backend server
+uvicorn[standard]==0.30.6           # to run FastAPI server
 
-sqlalchemy              # orm
-psycopg2-binary         # PostgreSQL driver
+sqlalchemy==2.0.35                  # orm
+psycopg2-binary==2.9.9 
+             
+pydantic==2.9.2                     # type validation
+email-validator==2.2.0
+pydantic-settings==2.5.2
 
-alembic                 
+python-jose[cryptography]==3.3.0    # for encryption ------
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
 
-pydantic-settings
-python-dotenv
+python-dotenv==1.0.1
+apscheduler==3.10.4
+python-multipart==0.0.9
