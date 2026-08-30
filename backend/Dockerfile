@@ -21,7 +21,7 @@ RUN pip install --no-cache-dir --upgrade pip \
 COPY . .
 
 # Expose the FastAPI port
-EXPOSE ${BE_PORT}
+EXPOSE 8000
 
 # Start the FastAPI application
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "${BE_PORT}"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
