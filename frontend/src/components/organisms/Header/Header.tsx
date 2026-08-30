@@ -3,7 +3,7 @@ import type { HeaderProps } from '../../../types/header.types'
 
 const Header = ({ left, center, right, bottom }: HeaderProps) => {
   return (
-    <header className="sticky inset-x-0 top-0 z-header w-full bg-bg border-b border-primary/50 backdrop-blur-md">
+    <header className="sticky inset-x-0 top-0 z-30 w-full bg-bg border-b border-primary/50 backdrop-blur-md">
       {/* Main Header Bar */}
       <div className="mx-auto flex h-16 w-full items-center justify-between px-4 md:px-10">
         {left && (
