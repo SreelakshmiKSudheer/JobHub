@@ -14,4 +14,7 @@
 
     --color-text: #000000;
     --color-text-alt: #666666;
+
+    --font-display: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
 }
