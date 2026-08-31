@@ -36,6 +36,7 @@ class Employee(Base):
     full_name: Mapped[str] = mapped_column(
         NameType,
         nullable=False,
+        index=True
     )
     employee_code: Mapped[str] = mapped_column(
         EmployeeCodeType,
@@ -46,13 +47,15 @@ class Employee(Base):
     department_id: Mapped[UUID] = mapped_column(
         PG_UUID(as_uuid=True),
         ForeignKey("departments.id", ondelete="RESTRICT"),
-        nullable=False
+        nullable=False,
+        index=True
     )
     
     designation_id: Mapped[UUID] = mapped_column(
         PG_UUID(as_uuid=True),
         ForeignKey("designations.id", ondelete="RESTRICT"),
-        nullable=False
+        nullable=False,
+        index=True
     )
     
     experience_years: Mapped[Decimal] = mapped_column(

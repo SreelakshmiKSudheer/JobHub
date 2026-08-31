@@ -25,11 +25,13 @@ class Notification(Base, PKMixin, CreatedAtMixin):
         PG_UUID(as_uuid=True),
         ForeignKey("users.id", ondelete="CASCADE"),
         nullable=False,
+        index=True
     )
     
     notification_type: Mapped[NotificationType] = mapped_column(
         Enum(NotificationType, name="notification_type", native_enum=True),
         nullable=False,
+        index=True
     )
     
     title: Mapped[str] = mapped_column(

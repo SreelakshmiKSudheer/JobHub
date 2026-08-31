@@ -24,7 +24,8 @@ class User(Base, PKMixin, CreatedAtMixin, UpdatedAtMixin):
     email: Mapped[str] = mapped_column(
         EmailType, 
         unique=True, 
-        nullable=False
+        nullable=False,
+        index=True
     )
     
     password_hash: Mapped[str] = mapped_column(

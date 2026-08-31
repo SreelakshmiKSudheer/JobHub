@@ -22,20 +22,22 @@ class Application(Base, PKMixin, CreatedAtMixin, UpdatedAtMixin):
     job_posting_id: Mapped[UUID] = mapped_column(
         PG_UUID(as_uuid=True),
         ForeignKey("job_postings.id", ondelete="RESTRICT"),
-        nullable=False
+        nullable=False,
+        index=True
     )
     
     employee_id: Mapped[UUID] = mapped_column(
         PG_UUID(as_uuid=True),
         ForeignKey("employees.id", ondelete="RESTRICT"),
         nullable=False,
+        index=True
     )
-    
     
     status: Mapped[ApplicationStatus] = mapped_column(
         Enum(ApplicationStatus, name="application_status", native_enum=True),
         nullable=False,
-        default=ApplicationStatus.APPLIED
+        default=ApplicationStatus.APPLIED,
+        index=True
     )
     
     # --- relationships ---

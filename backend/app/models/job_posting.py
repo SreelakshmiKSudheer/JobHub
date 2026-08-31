@@ -27,7 +27,8 @@ class JobPosting(Base, PKMixin, CreatedAtMixin, UpdatedAtMixin, SoftDeleteMixin)
     
     title: Mapped[str] = mapped_column(
         ShortTextType,
-        nullable=False
+        nullable=False,
+        index=True
     )
     
     description: Mapped[str] = mapped_column(
@@ -39,13 +40,15 @@ class JobPosting(Base, PKMixin, CreatedAtMixin, UpdatedAtMixin, SoftDeleteMixin)
     department_id: Mapped[UUID] = mapped_column(
         PG_UUID(as_uuid=True),
         ForeignKey("departments.id", ondelete="RESTRICT"),
-        nullable=False
+        nullable=False,
+        index=True
     )
     
     designation_id: Mapped[UUID] = mapped_column(
         PG_UUID(as_uuid=True),
         ForeignKey("designations.id", ondelete="RESTRICT"),
         nullable=False,
+        index=True
     )
     
     location: Mapped[str | None] = mapped_column(

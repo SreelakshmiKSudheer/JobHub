@@ -42,6 +42,7 @@ class JobTemplate(Base, PKMixin, CreatedAtMixin, UpdatedAtMixin, SoftDeleteMixin
         PG_UUID(as_uuid=True),
         ForeignKey("designations.id", ondelete="RESTRICT"),
         nullable=False,
+        index=True
     )
     
     employment_type: Mapped[EmploymentType | None] = mapped_column(
