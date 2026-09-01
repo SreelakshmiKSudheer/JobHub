@@ -27,7 +27,7 @@ def get_password_hash(password: str) -> str:
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     return pwd_context.verify(plain_password, hashed_password)
 
-def _build_jwt_token_payload(user_id: str, token_type: str, role: Role, expires_delta: timedelta, extra_payload: dict[str, object] | None = None) -> dict[str, object]:
+def _build_jwt_token_payload(user_id: str, token_type: str, role: Role, version: int,expires_delta: timedelta, extra_payload: dict[str, object] | None = None) -> dict[str, object]:
     now = datetime.now(timezone.utc)
     
     payload: dict[str, object] = {
@@ -36,7 +36,7 @@ def _build_jwt_token_payload(user_id: str, token_type: str, role: Role, expires_
         "role": role,
         "iat": int(now.timestamp()),
         "exp": int((now + expires_delta).timestamp()),
-        "jti": secrets.token_urlsafe(16)
+        "version": version
     }
     if extra_payload:
         payload.update(extra_payload)
