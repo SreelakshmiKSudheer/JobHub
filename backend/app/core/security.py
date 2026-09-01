@@ -32,7 +32,7 @@ def _build_jwt_token_payload(user_id: str, token_type: str, role: Role, version:
     
     payload: dict[str, object] = {
         "sub": user_id,
-        "type": token_type,
+        "token_type": token_type,
         "role": role,
         "iat": int(now.timestamp()),
         "exp": int((now + expires_delta).timestamp()),
@@ -42,9 +42,11 @@ def _build_jwt_token_payload(user_id: str, token_type: str, role: Role, version:
         payload.update(extra_payload)
     return payload
 
-def create_access_token(user_id: str, role: Role, extra_payload: dict[str, object] | None = None) -> str:
+def create_access_token(user_id: str, role: Role, version: int, extra_payload: dict[str, object] | None = None) -> str:
     payload = _build_jwt_token_payload(user_id=user_id, token_type=TokenType.ACCESS,
-    role=role, expires_delta=timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES), extra_payload=extra_payload)
+    role=role, 
+    version=version,
+    expires_delta=timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES), extra_payload=extra_payload)
     return jwt.encode(payload, settings.SECRET_KEY, algorithm=settings.JWT_ALGORITHM)
 
 def decode_token(token: str) -> dict[str, object]:
