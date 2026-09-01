@@ -68,6 +68,8 @@ def require_role(*roles: UserRole) -> Callable:
 
     return dependency
 
+require_admin = require_role(UserRole.ADMIN)
+require_role_user = require_role(UserRole.USER)
 
 def get_current_employee(db: Session, user: User) -> Employee | None:
     return db.query(Employee).filter(Employee.id == user.id).one_or_none()
