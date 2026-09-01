@@ -13,7 +13,7 @@ from app.db.types import EmailType
 
 
 if TYPE_CHECKING:
-    from employee import Employee
+    from app.models.employee import Employee
     from app.models.job_posting import JobPosting
     from app.models.job_template import JobTemplate
     from app.models.notification import Notification
