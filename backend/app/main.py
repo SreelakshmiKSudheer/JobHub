@@ -10,11 +10,6 @@ app = FastAPI(
     version="1.0.0",
 )
 
-
-@app.get("/")
-async def root():
-    return {"message": "Job Hub API is running"}
-
 # standard HTTP exceptions
 @app.exception_handler(StarletteHTTPException)
 async def http_exception_handler(request: Request, exception: StarletteHTTPException):
