@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import uuid
 from datetime import datetime
-from sqlalchemy import Enum, String, Text, DateTime, func
+from sqlalchemy import Enum, Integer, String, Text, DateTime, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from typing import TYPE_CHECKING, Optional
 
@@ -44,6 +44,12 @@ class User(Base, PKMixin, CreatedAtMixin, UpdatedAtMixin):
     last_login: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         nullable=True,
+    )
+    
+    token_version: Mapped[int] = mapped_column(
+        Integer,
+        nullable=False,
+        default=0
     )
     
     # --- relationships ---
