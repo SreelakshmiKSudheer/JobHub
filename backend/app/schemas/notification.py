@@ -4,7 +4,7 @@ from uuid import UUID
 from pydantic import BaseModel, ConfigDict, Field
 
 from app.models.enums import NotificationType
-from backend.app.core.constants import LONG_TEXT_MAX_LENGTH, SHORT_TEXT_MAX_LENGTH
+from app.core.constants import LONG_TEXT_MAX_LENGTH, SHORT_TEXT_MAX_LENGTH
 
 
 class NotificationBase(BaseModel):

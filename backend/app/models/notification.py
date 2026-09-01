@@ -3,6 +3,8 @@ from typing import TYPE_CHECKING, Optional
 
 from sqlalchemy import Enum, ForeignKey, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.types import DateTime
+from datetime import datetime
 
 import uuid
 from uuid import UUID, uuid4
@@ -54,6 +56,12 @@ class Notification(Base, PKMixin, CreatedAtMixin):
         PG_UUID(as_uuid=True),
         ForeignKey("job_postings.id", ondelete="CASCADE"),
         nullable=True,
+    )
+
+    read_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True),
+        nullable=True,
+        default=None
     )
     
     # --- relationships ---
