@@ -1,4 +1,3 @@
-import React from 'react'
 import type { AccordianProps } from '../../../types/accordian.types'
 import { ChevronDown } from 'lucide-react'
 

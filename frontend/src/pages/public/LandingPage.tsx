@@ -1,12 +1,8 @@
-import React from "react";
 import Hero from "../../components/organisms/Hero/Hero";
 import FeatureCard from "../../components/molecules/FeatureCard/FeatureCard";
 import { Typography } from "../../components/atoms/Typography/Typography";
-import Accordian from "../../components/molecules/Accordian/Accordian";
-
 import { heroData1, heroData2, heroData3 } from "../../data/LandingPage/Hero";
 import { featureData } from "../../data/LandingPage/Features";
-import { faqData } from "../../data/LandingPage/Faq";
 import FAQSection from "../../components/organisms/FAQSection.tsx/FAQSection";
 
 const LandingPage = () => {

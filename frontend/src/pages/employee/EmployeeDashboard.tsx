@@ -1,11 +1,9 @@
-import React from 'react'
-
 const EmployeeDashboard = () => {
   return (
     <div>
-      
+      <h1 className="text-xl font-bold">Employee Dashboard</h1>
     </div>
-  )
-}
+  );
+};
 
-export default EmployeeDashboard
+export default EmployeeDashboard;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "../../components/organisms/Header/Header";
 import Footer from "../../components/organisms/Footer/Footer";
-import { Outlet } from "react-router";
+import { Outlet, useNavigate } from "react-router";
 import Logo from "../../components/atoms/Logo/Logo";
 import Button from "../../components/atoms/Button/Button";
 import Navbar from "../../components/molecules/Navbar/Navbar";
@@ -18,6 +18,8 @@ const PublicLayout = () => {
 
   const handleMenuToggle = () => setIsMenuOpen((prev) => !prev);
   const handleMenuClose = () => setIsMenuOpen(false);
+
+  const navigate = useNavigate();
 
   return (
     <div className="flex min-h-screen w-full flex-col bg-bg">
@@ -36,6 +38,7 @@ const PublicLayout = () => {
                 variant="filled"
                 className="rounded-3xl"
                 textClassName="text-white"
+                onClick={() => {navigate("/login")}}
               />
             </div>
             {/* Mobile Menu Toggle */}
@@ -64,6 +67,7 @@ const PublicLayout = () => {
                   variant="filled"
                   className="w-full rounded-3xl"
                   textClassName="text-white"
+                  onClick={() => {navigate("/login")}}
                 />
               </div>
             </div>

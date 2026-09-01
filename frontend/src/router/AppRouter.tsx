@@ -1,13 +1,12 @@
-import React from 'react'
-import { BrowserRouter as Router } from 'react-router'
-import AppRoutes from './AppRoutes'
+import { BrowserRouter as Router } from 'react-router';
+import AppRoutes from './AppRoutes';
 
 const AppRouter = () => {
   return (
     <Router>
-        <AppRoutes />
+      <AppRoutes />
     </Router>
-  )
-}
+  );
+};
 
-export default AppRouter
+export default AppRouter;
