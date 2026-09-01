@@ -52,7 +52,7 @@ class JobTemplate(Base, PKMixin, CreatedAtMixin, UpdatedAtMixin, SoftDeleteMixin
     )
     
     experience_years: Mapped[Decimal | None] = mapped_column(
-        DECIMAL(2, 2),
+        DECIMAL(4, 2),
         nullable=True,
         default=None
     )

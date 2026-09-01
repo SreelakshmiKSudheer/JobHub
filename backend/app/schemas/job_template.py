@@ -4,7 +4,7 @@ from decimal import Decimal
 from datetime import datetime
 
 from app.core.constants import LONG_TEXT_MAX_LENGTH, SHORT_TEXT_MAX_LENGTH
-from app.models.enums import EmploymentType, JobPostingStatus
+from app.models.enums import EmploymentType, SkillLevel
 
 class JobTemplateBase(BaseModel):
     name: str = Field(..., description="The name of the job template", max_length=SHORT_TEXT_MAX_LENGTH)
@@ -13,11 +13,11 @@ class JobTemplateBase(BaseModel):
     designation_id: UUID = Field(..., description="The unique identifier of the designation for the job posting")
     employment_type: EmploymentType | None = Field(..., description="The employment type for the job posting")    
     experience_years: Decimal | None = Field(..., description="The required years of experience for the job posting")
-    skills: list[dict[UUID, str]] | None = Field(..., description="The skills required for the job posting")
+    skills: list[dict[UUID, SkillLevel]] | None = Field(..., description="The skills required for the job posting")
     salary: Decimal | None = Field(default=None, description="The salary offered for the job posting")    
     
 class JobTemplateCreate(JobTemplateBase):
-    created_by: UUID = Field(..., description="The unique identifier of the user who created the job posting")
+    pass
         
 class JobTemplateUpdate(BaseModel):
     name: str | None = Field(default=None, description="The name of the job template", max_length=SHORT_TEXT_MAX_LENGTH)
@@ -26,7 +26,7 @@ class JobTemplateUpdate(BaseModel):
     designation_id: UUID | None = Field(default=None, description="The unique identifier of the designation for the job posting")
     employment_type: EmploymentType | None = Field(default=None, description="The employment type for the job posting")    
     experience_years: Decimal | None = Field(default=None, description="The required years of experience for the job posting")
-    skills: list[dict[UUID, str]] | None = Field(default=None, description="The skills required for the job posting")
+    skills: list[dict[UUID, SkillLevel]] | None = Field(default=None, description="The skills required for the job posting")
     salary: Decimal | None = Field(default=None, description="The salary offered for the job posting")    
     
 class JobTemplateResponse(JobTemplateBase):
@@ -39,3 +39,5 @@ class JobTemplateResponse(JobTemplateBase):
     deleted_at: datetime | None = Field(default=None, description="The deletion time of the job posting")
     
     model_config = ConfigDict(from_attributes=True)
+    
+    
