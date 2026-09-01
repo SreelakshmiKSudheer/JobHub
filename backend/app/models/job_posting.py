@@ -64,7 +64,7 @@ class JobPosting(Base, PKMixin, CreatedAtMixin, UpdatedAtMixin, SoftDeleteMixin)
     )
     
     experience_years: Mapped[Decimal] = mapped_column(
-        DECIMAL(2, 2),
+        DECIMAL(4, 2),
         nullable=False,
         default=None
     )
@@ -88,7 +88,6 @@ class JobPosting(Base, PKMixin, CreatedAtMixin, UpdatedAtMixin, SoftDeleteMixin)
     deadline_reminder_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         nullable=False,
-        default= deadline - func.interval('1 day')
     )
     
     status: Mapped[JobPostingStatus] = mapped_column(
