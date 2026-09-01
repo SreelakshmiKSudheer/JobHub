@@ -5,6 +5,7 @@ from app.seeds.admin.create_admin import seed_create_admin
 from app.seeds.employee.create_employee import seed_create_employee 
 from app.seeds.department.create_department import seed_create_department
 from app.seeds.designation.create_designation import seed_create_designation
+from app.seeds.skill.create_skill import seed_create_skill
 
 def run():
     db = SessionLocal()
@@ -12,7 +13,8 @@ def run():
         # seed_create_admin(db)
         # seed_create_employee(db)
         # seed_create_department(db)
-        seed_create_designation(db)
+        # seed_create_designation(db)
+        seed_create_skill(db)
     finally:
         db.close()
 
