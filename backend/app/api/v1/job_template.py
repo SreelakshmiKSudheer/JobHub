@@ -36,7 +36,7 @@ def get_job_template(template_id: UUID, db: Session = Depends(get_db), current_u
     )
 
 
-@job_template_router.post("", response_model=APIResponse[JobTemplateResponse], dependencies=[Depends(require_admin), Depends(get_current_user)])
+@job_template_router.post("", response_model=APIResponse[JobTemplateResponse], status_code=status.HTTP_201_CREATED, dependencies=[Depends(require_admin), Depends(get_current_user)])
 def create_job_template(
     payload: JobTemplateCreate, current_user: User = Depends(require_admin), db: Session = Depends(get_db)
 ):

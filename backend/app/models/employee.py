@@ -59,7 +59,7 @@ class Employee(Base):
     )
     
     experience_years: Mapped[Decimal] = mapped_column(
-        DECIMAL(2, 2),
+        DECIMAL(4, 2),
         nullable=False,
         default=0
     )
