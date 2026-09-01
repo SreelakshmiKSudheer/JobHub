@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     from app.models.job_posting import JobPosting
     from app.models.job_template import JobTemplate
     from app.models.notification import Notification
+    from app.models.audit_log import AuditLog
 
 class User(Base, PKMixin, CreatedAtMixin, UpdatedAtMixin):
     __tablename__ = "users"
@@ -72,6 +73,11 @@ class User(Base, PKMixin, CreatedAtMixin, UpdatedAtMixin):
     
     notifications: Mapped[list["Notification"]] = relationship(
         back_populates="recipient",
+        cascade="all, delete-orphan",
+    )
+    
+    audit_logs: Mapped[list["AuditLog"]] = relationship(
+        back_populates="user",
         cascade="all, delete-orphan",
     )
       

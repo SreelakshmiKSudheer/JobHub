@@ -9,5 +9,6 @@ from app.models.job_template import JobTemplate
 from app.models.notification import Notification
 from app.models.skill import Skill
 from app.models.user import User
+from app.models.audit_log import AuditLog
 
-__all__ = ["Base", "Application", "Department", "Designation", "Employee", "JobPosting", "JobTemplate", "Notification", "Skill", "User"]
+__all__ = ["Base", "Application", "Department", "Designation", "Employee", "JobPosting", "JobTemplate", "Notification", "Skill", "User", "AuditLog"]
