@@ -1,2 +1,10 @@
 .env
 repomix-output.xml
+/alembic/__pycache__
+/app/models/__pycache__
+/app/api/v1/__pycache__
+/app/repository/__pycache__
+/app/schemas/__pycache__
+/app/services/__pycache__
+/app/core/__pycache__
+/app/db/__pycache__
