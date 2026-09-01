@@ -1,32 +1,32 @@
 from datetime import datetime
+from typing import Optional
 from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field
 
 from app.models.enums import ApplicationStatus
+from app.schemas.job_posting import JobPostingResponse
 
 
 class ApplicationBase(BaseModel):
     job_posting_id: UUID = Field(..., description="The unique identifier of the job posting")
-    
     employee_id: UUID = Field(..., description="The unique identifier of the employee")
 
 
-class ApplicationCreate(ApplicationBase):
-    status: ApplicationStatus = Field(default=ApplicationStatus.APPLIED, description="The status of the application")
-
+class ApplicationCreate(BaseModel):
+    job_posting_id: UUID = Field(..., description="The unique identifier of the job posting")
 
 
 class ApplicationUpdate(BaseModel):
-    status: ApplicationStatus | None = Field(None, description="The status of the application")
+    status: ApplicationStatus = Field(..., description="The status of the application")
 
 
 class ApplicationResponse(ApplicationBase):
-    """Properties returned to the client."""
     id: UUID
     status: ApplicationStatus = Field(..., description="The status of the application")
     created_at: datetime
     updated_at: datetime
+    withdraw_allowed: bool = Field(default=False)
+    job_posting: Optional[JobPostingResponse] = None
 
-    # Enables Pydantic to read data directly from the SQLAlchemy model instance
     model_config = ConfigDict(from_attributes=True)
