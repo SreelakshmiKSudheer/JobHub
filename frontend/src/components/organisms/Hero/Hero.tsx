@@ -46,7 +46,7 @@ const Hero = ({
           <Typography
             variant="body"
             ashtml="p"
-            className="text-text text-md md:text-lg mt-4"
+            className="text-text text-sm md:text-lg mt-4"
           >
             {description}
           </Typography>
@@ -68,7 +68,7 @@ const Hero = ({
             <Button
               variant="filled"
               text={ctaText}
-              className="rounded-4xl"
+              className="rounded-4xl px-0 md:px-6 py-0 md:py-2.5"
               onClick={() => navigate(ctaLink)}
             />
           </div>
