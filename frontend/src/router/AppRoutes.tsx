@@ -17,6 +17,8 @@ import AdminJobApplication from '../pages/admin/AdminApplication';
 import EmployeeProfile from '../pages/employee/EmployeeProfile';
 import EmployeeJobDetails from '../pages/employee/EmployeeJobDetails';
 import EmployeeApplicationTracking from '../pages/employee/EmployeeApplicationTracking';
+import AdminJobPostingDetails from '../pages/admin/AdminJobPostingDetails';
+import AdminJobTemplateDetails from '../pages/admin/AdminJobTemplateDetails';
 
 const AppRoutes = () => {
   return (
@@ -34,7 +36,9 @@ const AppRoutes = () => {
         <Route element={<AdminLayout />}>
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/job-roles" element={<AdminJobRoles />} />
+          <Route path="/admin/job-roles/:id" element={<AdminJobTemplateDetails />} />
           <Route path="/admin/job-postings" element={<AdminJobPostings />} />
+          <Route path="/admin/job-postings/:id" element={<AdminJobPostingDetails />} />
           <Route path="/admin/job-applications" element={<AdminJobApplications />} />
           <Route path="/admin/job-applications/:id" element={<AdminJobApplication />} />
         </Route>
