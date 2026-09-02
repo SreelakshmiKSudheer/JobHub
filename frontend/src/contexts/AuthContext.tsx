@@ -42,7 +42,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const login = async (payload: LoginPayload): Promise<'admin' | 'user'> => {
     const data = await authService.login(payload);
     const accessToken = data.access_token;
-    setCookie('access_token', accessToken, 7);
+    setCookie('access_token', accessToken, 0, 30);
 
     const decoded = decodeJwt(accessToken);
     if (!decoded || !decoded.role) {

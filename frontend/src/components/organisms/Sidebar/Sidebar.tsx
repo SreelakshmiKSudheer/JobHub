@@ -7,7 +7,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, items, className = '' }) => {
     <aside
       className={`${
         open ? 'flex flex-col' : 'hidden'
-      } md:flex w-70 md:w-[20%] shrink-0 bg-bg-alt border-r border-text/10 p-2 md:px-4  md:py-4 flex-col gap-2 shadow-sm ${className}`}
+      } md:flex w-70 md:w-[20%] shrink-0 sticky left-0 top-15 h-[calc(100vh-68px)] bg-bg-alt border-r border-text/10 p-2 md:px-4  md:py-4 flex-col gap-2 shadow-sm ${className}`}
     >
 
       <nav className="flex flex-col gap-2 p-3 md:p-2">
