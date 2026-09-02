@@ -1,6 +1,4 @@
-import React from 'react'
 import type { navItemProps } from '../../../types/navitem.types'
-import { href } from 'react-router'
 
 const NavItem = ({ label, href, active, onClick }: navItemProps) => {
   return (

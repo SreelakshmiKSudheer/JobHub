@@ -1,4 +1,3 @@
-import React from "react";
 import type { FeatureCardProps } from "../../../types/featurecard.types";
 
 const FeatureCard = ({ title, description, icon }: FeatureCardProps) => {

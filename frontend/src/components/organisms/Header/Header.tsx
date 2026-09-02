@@ -1,4 +1,3 @@
-import React from 'react'
 import type { HeaderProps } from '../../../types/header.types'
 
 const Header = ({ left, center, right, bottom }: HeaderProps) => {
@@ -11,13 +10,13 @@ const Header = ({ left, center, right, bottom }: HeaderProps) => {
             {left}
           </div>
         )}
-        
+
         {center && (
-          <div className="flex flex-1 items-center justify-center h-full">
+          <div className="flex items-center justify-center h-full flex-1 px-4">
             {center}
           </div>
         )}
-        
+
         {right && (
           <div className="flex shrink-0 items-center justify-end h-full">
             {right}
@@ -25,8 +24,11 @@ const Header = ({ left, center, right, bottom }: HeaderProps) => {
         )}
       </div>
 
-      {/* Dropdown / Mobile Menu Slot */}
-      {bottom && bottom}
+      {bottom && (
+        <div className="w-full">
+          {bottom}
+        </div>
+      )}
     </header>
   )
 }

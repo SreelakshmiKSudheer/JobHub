@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Accordian from '../../molecules/Accordian/Accordian';
 import { faqData } from '../../../data/LandingPage/Faq';
 
@@ -10,17 +10,18 @@ const FAQSection = () => {
   };
 
   return (
-    <div className="w-full flex flex-col gap-4 mt-4 items-center">
+    <div className="w-full flex flex-col items-center justify-center gap-4 mt-6">
       {faqData.map((faq, index) => (
         <Accordian
           key={index}
           title={faq.title}
           content={faq.content}
           isOpen={openIndex === index}
-          onClick={() => toggleAccordion(index)} 
+          onClick={() => toggleAccordion(index)}
         />
       ))}
     </div>
   );
 };
-export default FAQSection
+
+export default FAQSection;
