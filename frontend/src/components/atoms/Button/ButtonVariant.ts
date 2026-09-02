@@ -62,6 +62,8 @@ export const colors: Record<ButtonColor, Record<ButtonVariant, string>> = {
 };
 
 export const sizes: Record<ButtonSize, string> = {
+  xs: "px-2 py-1 text-xs",
+  
   sm: "px-3 py-2 text-sm",
 
   md: "px-5 py-2 text-base",
