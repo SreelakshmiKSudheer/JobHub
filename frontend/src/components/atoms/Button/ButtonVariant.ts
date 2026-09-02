@@ -57,7 +57,7 @@ export const colors: Record<ButtonColor, Record<ButtonVariant, string>> = {
     outline:
       "border-red-600 text-red-600 hover:bg-red-50 ",
     none:
-      "text-red-600 hover:text-red-700"
+      "text-red-600 hover:text-red-700 hover:bg-red-50"
   },
 };
 
