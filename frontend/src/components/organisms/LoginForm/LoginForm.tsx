@@ -33,12 +33,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, loading = false, error 
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full flex flex-col gap-5">
+    <form onSubmit={handleSubmit} className="w-full flex flex-col gap-5 bg-bg-alt p-8 md:p-6 rounded-3xl shadow-lg shadow-text/20 border border-text/10 md:min-w-sm md:max-w-md">
       <div className="flex flex-col gap-1">
-        <h2 className="text-2xl font-bold text-primary-hover">Login to JobHub</h2>
-        <p className="text-sm text-text-alt">
-          Enter your organization credentials to access internal opportunities.
-        </p>
+        <h2 className="text-2xl md:text-3xl font-bold text-primary-hover text-center">Login</h2>
       </div>
 
       {error && (
@@ -48,7 +45,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, loading = false, error 
         </div>
       )}
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 opacity-100 z-2 md:z-0">
         <FormField
           label="Email Address"
           type="email"
@@ -82,13 +79,13 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, loading = false, error 
 
       <Button
         type="submit"
-        text="Login to Account"
+        text="Login"
         variant="filled"
         color="primary"
-        size="lg"
+        size="md"
         fullWidth
         loading={loading}
-        className="rounded-xl mt-2 font-semibold shadow-md hover:shadow-lg transition-all duration-200"
+        className="rounded-lg mt-2 font-semibold shadow-md hover:shadow-lg transition-all duration-200"
       />
     </form>
   );
