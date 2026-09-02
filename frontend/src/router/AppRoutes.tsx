@@ -10,6 +10,8 @@ import AdminDashboard from '../pages/admin/AdminDashboard';
 import AdminJobRoles from '../pages/admin/AdminJobRoles';
 import AdminJobPostings from '../pages/admin/AdminJobPostings';
 import EmployeeDashboard from '../pages/employee/EmployeeDashboard';
+import EmployeeJobOpportunities from '../pages/employee/EmployeeJobOpportunities';
+import EmployeeMyApplications from '../pages/employee/EmployeeMyApplications';
 import AdminJobApplications from '../pages/admin/AdminApplications';
 import AdminJobApplication from '../pages/admin/AdminApplication';
 import EmployeeProfile from '../pages/employee/EmployeeProfile';
@@ -30,7 +32,7 @@ const AppRoutes = () => {
       {/* TA / Admin Protected Routes */}
       <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
         <Route element={<AdminLayout />}>
-          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/job-roles" element={<AdminJobRoles />} />
           <Route path="/admin/job-postings" element={<AdminJobPostings />} />
           <Route path="/admin/job-applications" element={<AdminJobApplications />} />
@@ -41,7 +43,9 @@ const AppRoutes = () => {
       {/* Employee Protected Routes */}
       <Route element={<ProtectedRoute allowedRoles={['user']} />}>
         <Route element={<EmployeeLayout />}>
-          <Route path="/employee" element={<EmployeeDashboard />} />
+          <Route path="/employee/dashboard" element={<EmployeeDashboard />} />
+          <Route path="/employee/job-opportunities" element={<EmployeeJobOpportunities />} />
+          <Route path="/employee/my-applications" element={<EmployeeMyApplications />} />
           <Route path="/employee/profile" element={<EmployeeProfile />} />
           <Route path="/employee/job-details/:id" element={<EmployeeJobDetails />} />
           <Route path="/employee/applications/:id" element={<EmployeeApplicationTracking />} />

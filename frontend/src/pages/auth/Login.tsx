@@ -16,9 +16,9 @@ const Login: React.FC = () => {
   React.useEffect(() => {
     if (isAuthenticated && role) {
       if (role === 'admin') {
-        navigate('/admin', { replace: true });
+        navigate('/admin/dashboard', { replace: true });
       } else {
-        navigate('/employee', { replace: true });
+        navigate('/employee/dashboard', { replace: true });
       }
     }
   }, [isAuthenticated, role, navigate]);
@@ -29,9 +29,9 @@ const Login: React.FC = () => {
     try {
       const userRole = await login(payload);
       if (userRole === 'admin') {
-        navigate('/admin', { replace: true });
+        navigate('/admin/dashboard', { replace: true });
       } else {
-        navigate('/employee', { replace: true });
+        navigate('/employee/dashboard', { replace: true });
       }
     } catch (err: any) {
       setError(err.message || 'Login failed. Please check your credentials.');

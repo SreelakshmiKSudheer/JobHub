@@ -28,7 +28,7 @@ const AdminLayout = () => {
   }
 
   const sidebarItems: SidebarNavItem[] = [
-    { label: 'Dashboard', activeOn: '/admin', action: () => navigate('/admin'), icon: <LayoutDashboard size={18} /> },
+    { label: 'Dashboard', activeOn: '/admin/dashboard', action: () => navigate('/admin/dashboard'), icon: <LayoutDashboard size={18} /> },
     { label: 'Job Postings', activeOn: '/admin/job-postings', action: () => navigate('/admin/job-postings'), icon: <Briefcase size={18} /> },
     { label: 'Job Templates', activeOn: '/admin/job-roles', action: () => navigate('/admin/job-roles'), icon: <FileText size={18} /> },
   ];
